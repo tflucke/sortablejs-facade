@@ -10,7 +10,7 @@ lazy val root = project.in(file("."))
     crossScalaVersions := Nil,
     publish / skip := true,
     
-    compileDemo := Def.sequential(sortable / fastOptJS, sortabledemo / fastOptJS).value
+    compileDemo := Def.sequential(sortable / Compile / fastOptJS, demo / Compile / fastOptJS).value
   )
 
 def commonSettings = Seq(
